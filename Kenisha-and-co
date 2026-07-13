@@ -61,3 +61,43 @@ export default nextConfig;
   ],
   "exclude": ["node_modules"]
 }
+import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
+export const metadata = {
+  title: "Kenisha & Co.",
+  description: "Professional cleaning and property services in Belize."
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
+    </html>
+  );
+}import Hero from "@/components/Hero";
+import Services from "@/components/Services";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import Testimonials from "@/components/Testimonials";
+import CTA from "@/components/CTA";
+
+export default function Home() {
+  return (
+    <>
+      <Hero />
+      <Services />
+      <WhyChooseUs />
+      <Testimonials />
+      <CTA />
+    </>
+  );
+}
